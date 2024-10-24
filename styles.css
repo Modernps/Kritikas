@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff0f5; /* Soft pinkish background */
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #e63946; /* Romantic red */
+  }
+  
+  header.hero {
+    background: url('your-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.3); /* Subtle dark overlay */
+    position: relative;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  header button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    background-color: #ef8354; /* Soft coral */
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s;
+    position: relative;
+  }
+  
+  header button:hover {
+    background-color: #d62828; /* Deeper red */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Heart glow */
+  }
+  
+  header button:before {
+    content: '❤️'; /* Heart animation */
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s;
+  }
+  
+  header button:hover:before {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  
+  .journey-section {
+    padding: 60px;
+    background-color: #fff4e6;
+    text-align: center;
+  }
+  
+  .timeline {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .timeline-item {
+    width: 30%;
+    background-color: #fdf2f8;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s;
+    position: relative;
+  }
+  
+  .timeline-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(255, 192, 203, 0.5);
+  }
+  
+  .timeline-item:before {
+    content: '💖'; /* Add heart on hover */
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s;
+  }
+  
+  .timeline-item:hover:before {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+  
+    header button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .timeline {
+      flex-direction: column;
+    }
+  
+    .timeline-item {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .love-notes-section {
+    padding: 60px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .notes-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .note {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 180px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note:hover {
+    transform: rotateY(360deg); /* Flip animation */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Adjust grid layout for mobile */
+  @media (max-width: 768px) {
+    .notes-gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .note {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Modal styling */
+  .note-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  /* Mobile modal adjustments */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  
+  /* Floating heart animation */
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .floating-heart {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    font-size: 1.5rem;
+    animation: floatHearts 3s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  

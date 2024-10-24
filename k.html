@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Love Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Every day with you feels like magic</h1>
+    <button onclick="scrollToSection('journey')">Scroll to see our journey</button>
+  </header>
+
+  <section id="journey" class="journey-section">
+    <h2>Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>How We Met</h3>
+        <p>I know we met on Hinge but for some reason it always felt like I have always known you even before we met for cheesecake at Crazy Cheesy(ps.that was utter shit but kya bol sakte hai) </p>
+      </div>
+      <div class="timeline-item">
+        <h3>First Date</h3>
+        <p>It's honestly surprising how you babysat the mess called me ever since Crazy Cheesy i guess that could be considered as our first date or the Azul one i remember you always saying food always got shitter wherever you took me i still find that funny like howwwwwwwww</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Favorite Adventure</h3>
+        <p>Our Exploration for your Navrati outfit or that last minute plan to go to Pauls and we got soaked asf we spent so much for the sake of adventure that day</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes" class="love-notes-section">
+    <h2>Love Notes</h2>
+    <div class="notes-gallery">
+      <div class="note" onclick="showNote('note1')">I love your smile</div>
+      <div class="note" onclick="showNote('note2')">I love how you understand me</div>
+      <div class="note" onclick="showNote('note3')">I love that you let me be vulnerable around you</div>
+    </div>
+    <div id="note-modal" class="note-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeNote()">&times;</span>
+        <p id="note-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
